@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
-*print_numbers - print num from 0-9
-* owned by Mallam
-*Return: void
-*/
-
+ * print_numbers - prints 0123456789\n
+ *
+ * Return: void
+ */
 void print_numbers(void)
 {
 	char c;
@@ -14,5 +13,5 @@ void print_numbers(void)
 	{
 		_putchar(c);
 	}
-	_putchar ('\n');
+	_putchar('\n');
 }

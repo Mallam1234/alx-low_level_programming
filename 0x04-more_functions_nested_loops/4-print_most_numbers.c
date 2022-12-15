@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
-*print_most_numbers - prints
-* owned by mallam
+*print_most_numbers - print num except 2 and 4
+*
 *Return: void
 */
 
