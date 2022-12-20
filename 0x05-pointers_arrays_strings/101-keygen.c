@@ -1,40 +1,53 @@
-#include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 /**
- * _atoi - Convert a string to an integer.
- * @s: The pointer to convert
+ * main - Generates random valid passwords for the
+ * program 101-crackme.
  *
- * Return: A integer
+ * Return: Always 0.
  */
-int _atoi(char *s)
+int main(void)
 {
-	int c = 0;
-	unsigned int ni = 0;
-	int min = 1;
-	int isi = 0;
+	char password[84];
+	int index = 0, sum = 0, diff_half1, diff_half2;
 
-	while (s[c])
+	srand(time(0));
+
+	while (sum < 2772)
 	{
-		if (s[c] == 45)
-		{
-			min *= -1;
-		}
-
-		while (s[c] >= 48 && s[c] <= 57)
-		{
-			isi = 1;
-			ni = (ni * 10) + (s[c] - '0');
-			c++;
-		}
-
-		if (isi == 1)
-		{
-			break;
-		}
-
-		c++;
+		password[index] = 33 + rand() % 94;
+		sum += password[index++];
 	}
 
-	ni *= min;
-	return (ni);
+	password[index] = '\0';
+
+	if (sum != 2772)
+	{
+		diff_half1 = (sum - 2772) / 2;
+		diff_half2 = (sum - 2772) / 2;
+		if ((sum - 2772) % 2 != 0)
+			diff_half1++;
+
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + diff_half1))
+			{
+				password[index] -= diff_half1;
+				break;
+			}
+		}
+		for (index = 0; password[index]; index++)
+		{
+			if (password[index] >= (33 + diff_half2))
+			{
+				password[index] -= diff_half2;
+				break;
+			}
+		}
+	}
+
+	printf("%s", password);
+	return (0);
 }
