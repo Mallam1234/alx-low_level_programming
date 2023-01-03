@@ -1,0 +1,6 @@
+abc123
+chmod u+x 101-crackme
+git add .
+git commit -m "task9"
+git push
+exit
