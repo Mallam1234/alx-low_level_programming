@@ -1,4 +1,4 @@
-i#include "main.h"
+#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -50,3 +50,5 @@ char *argstostr(int ac, char **av)
 
 	return (aout);
 }
+Footer
+
