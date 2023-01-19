@@ -3,29 +3,67 @@
 #include <stdio.h>
 
 /**
- * main - ...
- * @argc: ...
- * @argv: ...
+ * op_add - ...
+ * @a: ...
+ * @b: ...
  * Return: ...
  */
-int main(int argc, char *argv[])
+int op_add(int a, int b)
 {
-	int (*oprt)(int, int);
-
-	if (argc != 4)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-
-	oprt = get_op_func(argv[2]);
-
-	if (!oprt)
-	{
-		printf("Error\n");
-		exit(99);
-	}
-	printf("%d\n", oprt(atoi(argv[1]), atoi(argv[3])));
-	return (0);
+	return (a + b);
 }
 
+/**
+ * op_sub - ...
+ * @a: ...
+ * @b: ...
+ * Return: ...
+ */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
+ * op_mul - ...
+ * @a: ...
+ * @b: ...
+ * Return: ...
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+
+/**
+ * op_div - ...
+ * @a: ...
+ * @b: ...
+ * Return: ...
+ */
+int op_div(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	return (a / b);
+}
+
+/**
+ * op_mod - ...
+ * @a: ...
+ * @b: ...
+ * Return: ...
+ */
+int op_mod(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	return (a % b);
+}
